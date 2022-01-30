@@ -38,12 +38,12 @@ def process_results(news_list):
   news_results = []
   for news_item in news_list:
     id = news_item.get('id')
-    name = news_item.get('name')
     description = news_item.get('description')
     url = news_item.get('url')
     title = news_item.get('title')
+    urlToImage = news_item.get('urlToImage')
 
-    news_object = Sources(id,name,description,url,title)
+    news_object = Sources(id,description,url,title,urlToImage)
     news_results.append(news_object)
 
   return news_results

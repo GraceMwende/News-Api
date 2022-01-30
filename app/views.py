@@ -6,8 +6,8 @@ from .request import get_sources
 def index():
   """root page function that returns the index page and its data"""
   # get bbc news
-  cnn_news_d = get_sources('cnn')
-  bbc_news_d = get_sources('bbc-news')
+  cnn_news_d = get_sources('terrorism')
+  bbc_news_d = get_sources('business')
   title = 'News all over the world'
 
   return render_template('index.html', title=title, cnn = cnn_news_d, bbc= bbc_news_d )

@@ -10,14 +10,25 @@
 
 <body>
   <!-- news sources section -->
-  <h2>News sources</h2>
+  <h2>CNN News sources</h2>
   <ul>
     {% for cnn_source in cnn %}
-    <li>{{cnn_source.title}}</li>
+    <img src="{{cnn_source.urlToImage}}" alt="terrorism">
+    <p>{{cnn_source.title}}</p>
+    <p>{{cnn_source.description}}</p>
+    <p>{{cnn_source.url}}</p>
     {% endfor %}
   </ul>
-  <!-- BBC NEWS -->
-
+  <!-- BUSINESS -->
+  <h2>Business News</h2>
+  <ul>
+    {% for bbc_source in bbc %}
+    <img src="{{bbc_source.urlToImage}}" alt="terrorism">
+    {{bbc_source.title}}
+    {{bbc_source.description}}
+    {{bbc_source.url}}
+    {% endfor %}
+  </ul>
 </body>
 
 </html>
