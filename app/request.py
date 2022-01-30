@@ -43,8 +43,9 @@ def process_results(news_list):
     title = news_item.get('title')
     urlToImage = news_item.get('urlToImage')
 
-    news_object = Sources(id,description,url,title,urlToImage)
-    news_results.append(news_object)
+    if title and urlToImage:
+      news_object = Sources(id,description,url,title,urlToImage)
+      news_results.append(news_object)
 
   return news_results
 

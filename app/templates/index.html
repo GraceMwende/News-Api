@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,22 +13,12 @@
   <!-- news sources section -->
   <h2>CNN News sources</h2>
   <ul>
-    {% for cnn_source in cnn %}
-    <img src="{{cnn_source.urlToImage}}" alt="terrorism">
-    <p>{{cnn_source.title}}</p>
-    <p>{{cnn_source.description}}</p>
-    <p>{{cnn_source.url}}</p>
-    {% endfor %}
+    {{macro.displayNewsList(terror)}}
   </ul>
   <!-- BUSINESS -->
   <h2>Business News</h2>
   <ul>
-    {% for bbc_source in bbc %}
-    <img src="{{bbc_source.urlToImage}}" alt="terrorism">
-    {{bbc_source.title}}
-    {{bbc_source.description}}
-    {{bbc_source.url}}
-    {% endfor %}
+    {{macro.displayNewsList(biz)}}
   </ul>
 </body>
 

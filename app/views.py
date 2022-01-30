@@ -10,7 +10,7 @@ def index():
   bbc_news_d = get_sources('business')
   title = 'News all over the world'
 
-  return render_template('index.html', title=title, cnn = cnn_news_d, bbc= bbc_news_d )
+  return render_template('index.html', title=title, terror = cnn_news_d, biz= bbc_news_d )
 
 @app.route('/art/<int:art_id>')
 def art(art_id):
