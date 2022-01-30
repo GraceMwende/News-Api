@@ -1,4 +1,4 @@
-class Sources:
+class Article:
   """sources object to define news sources"""
   def __init__(self,id,description,url,title,urlToImage):
     self.id = id

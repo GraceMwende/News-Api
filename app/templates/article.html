@@ -1,21 +1,23 @@
-{% extend 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <div class="container">
   <!-- image bg -->
   <div class="row">
+    {% for article in news %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"
-      style="height: 50vh; background: url({{news.urlToImage}}) no-repeat center center">
+      style="height: 50vh; background: url({{article.urlToImage}}) no-repeat center center">
     </div>
 
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-      <h3>{{ news.title }}</h3>
+      <h3>{{ article.title }}</h3>
 
-      <p class=""> {{ news.description }}</p>
-      <p class=""> <b> {{ news.url }}</b> </i> </p>
+      <p class=""> {{ article.description }}</p>
+      <a href="{{article.url}}" target="_blank">See more</a>
 
 
     </div>
+    {% endfor %}
   </div>
 
 </div>

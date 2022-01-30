@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources,get_article
+from .request import get_sources,get_all_sources,get_article
 
 @app.route('/')
 def index():
@@ -11,14 +11,16 @@ def index():
   sports = get_sources('sports')
   technology =get_sources('technology')
   politics = get_sources('politics')
+
+  allsources = get_all_sources('')
   title = 'News all over the world'
 
-  return render_template('index.html', title=title, terror = cnn_news_d, biz= bbc_news_d,sports=sports,technology=technology,politics=politics)
+  return render_template('index.html', title=title, terror = cnn_news_d, biz= bbc_news_d,sports=sports,technology=technology,politics=politics, sources=allsources)
 
-@app.route('/news/<int:id>')
-def article(id):
+@app.route('/source/<id>')
+def source(id):
   """returns art details page and its data"""
 
-  article = get_article(id)
-  title = f'{article.title}'
-  return render_template('article.html', news=article)
+  source = get_article(id)
+  # title = f'{source.title}'
+  return render_template('article.html', news=source)
