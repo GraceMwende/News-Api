@@ -46,6 +46,25 @@ def process_results(news_list):
     if title and urlToImage:
       news_object = Sources(id,description,url,title,urlToImage)
       news_results.append(news_object)
+      news_results = news_results[0:3]
 
   return news_results
 
+def get_article(id):
+  get_article_details_url = base_url.format(id,api_key)
+
+  with urllib.request.urlopen(get_article_details_url) as url:
+    article_details_data = url.read()
+    article_details_response = json.loads(article_details_data)
+
+    news_object = None
+    if article_details_response:
+      id = news_item.get('id')
+      description = news_item.get('description')
+      url = news_item.get('url')
+      title = news_item.get('title')
+      urlToImage = news_item.get('urlToImage')
+
+      news_object = Sources(id,description,url,title,urlToImage)
+  
+  return news_object

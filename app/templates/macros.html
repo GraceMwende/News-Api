@@ -1,10 +1,22 @@
 {% macro displayNewsList(news_list) %}
 
 {% for news in news_list %}
-<img src="{{news.urlToImage}}" alt="terrorism">
-<p>{{news.title}}</p>
-<p>{{news.description}}</p>
-<p>{{news.url}}</p>
+<!-- <div class="col-md-4 col-lg-4">
+  <img src="{{news.urlToImage}}" alt="{{news.title}}" class="img-responsive">
+  <li class="text-center">
+    <a href="/news/{{news.id}}">{{news.title}}</a>
+  </li>
+</div> -->
+<div class="col-md-4 col-lg-4">
+  <div class="card">
+    <img src="{{news.urlToImage}}" class="img-responsive" alt="{{news.title}}">
+    <div class="card-body">
+      <h5 class="card-title">"{{news.title}}"</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{{news.url}}" target="_blank" class="btn btn-primary text-center">Go to article</a>
+    </div>
+  </div>
+</div>
 {% endfor %}
 
 {% endmacro %}

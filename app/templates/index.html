@@ -3,12 +3,36 @@
 
 {% block content %}
 <!-- news sources section -->
-<h2>CNN News sources</h2>
-<ul>
-  {{macro.displayNewsList(terror)}}
-</ul>
 <!-- BUSINESS -->
-<h2>Business News</h2>
-<ul>
-  {{macro.displayNewsList(biz)}}
-  {% endblock %}
+<div class="mb-5">
+  <h2 class="text-center">Business News</h2>
+  <p>
+    {{macro.displayNewsList(biz)}}
+  </p>
+</div>
+
+<div class="mb-5">
+  <h2 class="text-center">Terrorism News</h2>
+  <p>
+    {{macro.displayNewsList(terror)}}
+  </p>
+</div>
+<h2 class="text-center">Technology News</h2>
+<p>
+  {{macro.displayNewsList(technology)}}
+</p>
+
+<div class="mb-5">
+  <h2 class="text-center">Sport News</h2>
+  <p>
+    {{macro.displayNewsList(sports)}}
+  </p>
+</div>
+
+<div class="mb-5">
+  <h2 class="text-center">Political News</h2>
+  <p>
+    {{macro.displayNewsList(politics)}}
+  </p>
+</div>
+{% endblock %}
