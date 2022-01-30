@@ -2,7 +2,7 @@ from app import app
 import urllib.request, json
 from .models import sources
 
-NewsSources = sources.NewsSources
+Sources = sources.Sources
 
 #GET API KEY
 api_key = app.config['NEWS_API_KEY']
@@ -41,6 +41,10 @@ def process_results(news_list):
     name = news_item.get('name')
     description = news_item.get('description')
     url = news_item.get('url')
+    title = news_item.get('title')
+
+    news_object = Sources(id,name,description,url,title)
+    news_results.append(news_object)
 
   return news_results
 
