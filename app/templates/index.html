@@ -1,36 +1,50 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
+<!-- styles block -->
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+{% endblock %}
+
 {% block content %}
 <!-- news sources section -->
 <!-- BUSINESS -->
-<div class="mb-5">
-  <h2 class="text-center">Business News</h2>
+
+<h2 class="text-center">Business News</h2>
+<div>
   <p>
     {{macro.displayNewsList(biz)}}
   </p>
 </div>
 
-<div class="mb-5">
-  <h2 class="text-center">Terrorism News</h2>
+
+<h2 class="text-center">Terrorism News</h2>
+<div>
   <p>
     {{macro.displayNewsList(terror)}}
   </p>
 </div>
-<h2 class="text-center">Technology News</h2>
-<p>
-  {{macro.displayNewsList(technology)}}
-</p>
 
-<div class="mb-5">
-  <h2 class="text-center">Sport News</h2>
+<h2 class="text-center">Technology News</h2>
+<div>
+  <p>
+    {{macro.displayNewsList(technology)}}
+  </p>
+</div>
+
+
+
+<h2 class="text-center">Sport News</h2>
+<div>
   <p>
     {{macro.displayNewsList(sports)}}
   </p>
 </div>
 
-<div class="mb-5">
-  <h2 class="text-center">Political News</h2>
+
+<h2 class="text-center">Political News</h2>
+<div>
   <p>
     {{macro.displayNewsList(politics)}}
   </p>
