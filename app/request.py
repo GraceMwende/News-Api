@@ -1,19 +1,21 @@
-from app import app
 import urllib.request, json
-from .models import sources
-from .models import allsources
+from .models import AllSources
+from .models import Article
 
-Article = sources.Article
-AllSources = allsources.AllSources
+api_key = None
+base_url = None
+sources_url = None
 
-#GET API KEY
-api_key = app.config['NEWS_API_KEY']
+def configure_request(app):
+  global api_key,base_url,sources_url
+  api_key = app.config['NEWS_API_KEY']
+  
+  #GET NEWS BASE URL
+  base_url = app.config['NEWS_API_BASE_URL']
 
-#GET NEWS BASE URL
-base_url = app.config['NEWS_API_BASE_URL']
-
-# ALL SOURCES URL
-sources_url = app.config['SOURCES_API_URL']
+  # ALL SOURCES URL
+  sources_url = app.config['SOURCES_API_URL']
+    
 
 def get_sources(newsources):
   """function that gets the json response of the url request"""
@@ -47,9 +49,10 @@ def process_results(news_list):
     url = news_item.get('url')
     title = news_item.get('title')
     urlToImage = news_item.get('urlToImage')
+    publishedAt = news_item.get('publishedAt')
 
     if title and urlToImage and urlToImage!='null':
-      news_object = Article(id,description,url,title,urlToImage)
+      news_object = Article(id,description,url,title,urlToImage,publishedAt)
       news_results.append(news_object)
       news_results = news_results[0:3]
 

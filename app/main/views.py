@@ -1,8 +1,9 @@
-from flask import render_template
-from app import app
-from .request import get_sources,get_all_sources,get_article
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_sources,get_all_sources,get_article
+from ..models import Article,AllSources
 
-@app.route('/')
+@main.route('/')
 def index():
   """root page function that returns the index page and its data"""
   # get bbc news
@@ -17,7 +18,7 @@ def index():
 
   return render_template('index.html', title=title, terror = cnn_news_d, biz= bbc_news_d,sports=sports,technology=technology,politics=politics, sources=allsources)
 
-@app.route('/source/<id>')
+@main.route('/source/<id>')
 def source(id):
   """returns art details page and its data"""
 
