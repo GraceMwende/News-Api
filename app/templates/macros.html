@@ -7,12 +7,11 @@
     <a href="/news/{{news.id}}">{{news.title}}</a>
   </li>
 </div> -->
-<div class="col-md-4 col-lg-4">
+<div class="col-md-4 col-lg-4 macro-div">
   <div class="card">
     <img src="{{news.urlToImage}}" class="img-responsive" alt="{{news.title}}">
     <div class="card-body">
-      <h5 class="card-title">"{{news.title | truncate(30)}}"</h5>
-      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <h5 class="card-title">"{{news.title | truncate(60)}}"</h5>
       <a href="{{news.url}}" target="_blank" class="btn btn-primary text-center">Go to article</a>
     </div>
   </div>
