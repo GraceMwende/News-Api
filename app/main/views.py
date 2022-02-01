@@ -18,7 +18,7 @@ def index():
 
   return render_template('index.html', title=title, terror = cnn_news_d, biz= bbc_news_d,sports=sports,technology=technology,politics=politics, sources=allsources)
 
-@main.route('/source/<id>')
+@main.route('/articles/<id>')
 def source(id):
   """returns art details page and its data"""
 
