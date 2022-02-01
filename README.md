@@ -1,4 +1,4 @@
-# Akan Naming Application
+# Get News Application
 
 ## Live Link
 
