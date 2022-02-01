@@ -54,7 +54,7 @@ def process_results(news_list):
     if title and urlToImage and urlToImage!='null':
       news_object = Article(id,description,url,title,urlToImage,publishedAt)
       news_results.append(news_object)
-      news_results = news_results[0:3]
+      news_results = news_results[0:10]
 
   return news_results
 
