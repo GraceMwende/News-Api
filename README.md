@@ -2,6 +2,8 @@
 
 ## Live Link
 
+https://news-api-254.herokuapp.com/
+
 #### Application Description
 
 Application that will users to view news sources and articles.On clicking the source view more articles
